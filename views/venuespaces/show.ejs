@@ -1,0 +1,47 @@
+<!-- introduced on 415 -->
+<% layout('layouts/boilerplate')%>
+
+
+
+<style>
+    .btn{
+        border-radius: 3px;
+    }
+
+</style>
+    <div class="row">
+        <div class=" col-sm-6 col-md-6 offset-md-3">
+            <div class="card mb-3">
+                <img src="<%= venuespace.image%>" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <%= venuespace.title%>
+                    </h5>
+                    <p class="card-text">
+                        <%= venuespace.description%>
+                    </p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item text-muted">
+                        <%= venuespace.location%>
+                    </li>
+                </ul>
+                <div class="card-body">
+                    <a href="/venuespaces/<%=venuespace._id%>/edit" class="card-link btn " style="background-color: #A9A9A9"  >Edit</a>
+
+                    <form class="d-inline" action="/venuespaces/<%=venuespace._id%>?_method=DELETE" method="POST">
+                        <button class=" btn btn-danger">Delete</button>
+
+
+                    </form>
+
+                </div>
+                <div class="card-footer text-muted " style="background-color: black;">
+                    <a style="color: white;" href="/venuespaces">All Venues</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
